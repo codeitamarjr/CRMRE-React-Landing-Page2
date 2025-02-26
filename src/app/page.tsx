@@ -367,6 +367,8 @@ export default function Home() {
             <Image
               alt="Itamar Junior"
               src="https://itjunior.dev/assets/images/me.webp"
+              width={128}
+              height={128}
               className="absolute inset-0 size-full object-cover brightness-150 saturate-0"
             />
             <div className="absolute inset-0 bg-gray-900/90 mix-blend-multiply" />
@@ -395,6 +397,8 @@ export default function Home() {
               <Image
                 alt="MD Property & Living"
                 src="https://images.squarespace-cdn.com/content/v1/5cf67b964faeb100010e6dab/d29c81eb-2e74-4b9c-8383-1f0b422e99a5/FullLogo_white.png?format=1500w"
+                width={500}
+                height={500}
                 className="h-12 w-auto"
               />
               <figure>
@@ -462,6 +466,8 @@ export default function Home() {
             <Image
               alt="Real Enquiries"
               src="/assets/brand/icon.svg"
+              width={48}
+              height={48}
               className="h-9"
             />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
