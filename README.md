@@ -20,7 +20,7 @@ Welcome to the **Real Enquiries** landing page repository! This is a modern, res
 ### 1️⃣ **Clone the repository**
 
 ```sh
-git clone https://github.com/codeitamarjr/real-enquiries-landing.git
+git clone https://github.com/codeitamarjr/CRMRE-Landing-Page2.git
 cd real-enquiries-landing
 ```
 
