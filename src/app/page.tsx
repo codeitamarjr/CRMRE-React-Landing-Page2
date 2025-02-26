@@ -148,7 +148,7 @@ export default function Home() {
               <span className="sr-only">Real Enquiries</span>
               <Image
                 alt="Real Enquiries"
-                src="/assets/brand/icon.svg"
+                src="assets/brand/icon.svg"
                 width={32}
                 height={32}
                 className="h-8 w-auto"
@@ -180,7 +180,7 @@ export default function Home() {
                 <span className="sr-only">Real Enquiries</span>
                 <Image
                   alt="Real Enquiries"
-                  src="/assets/brand/icon.svg"
+                  src="assets/brand/icon.svg"
                   width={32}
                   height={32}
                   className="h-8 w-auto"
@@ -280,35 +280,35 @@ export default function Home() {
           <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             <Image
               alt="Xero Accounting"
-              src="/assets/third/logos/xero.png"
+              src="assets/third/logos/xero.png"
               width={158}
               height={48}
               className="size-8 col-span-2 max-h-12 w-full object-contain lg:col-span-1 dark:filter dark:invert"
             />
             <Image
               alt="DocuSign"
-              src="/assets/third/logos/docusign.webp"
+              src="assets/third/logos/docusign.webp"
               width={158}
               height={48}
               className="size-6 col-span-2 max-h-12 w-full object-contain lg:col-span-1 dark:filter dark:invert"
             />
             <Image
               alt="Yardi"
-              src="/assets/third/logos/yardi.png"
+              src="assets/third/logos/yardi.png"
               width={158}
               height={48}
               className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 dark:filter dark:invert"
             />
             <Image
               alt="RTB"
-              src="/assets/third/logos/rtb.png"
+              src="assets/third/logos/rtb.png"
               width={158}
               height={48}
               className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1 dark:filter dark:invert"
             />
             <Image
               alt="Court Ireland"
-              src="/assets/third/logos/court-ireland.webp"
+              src="assets/third/logos/court-ireland.webp"
               width={158}
               height={48}
               className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1 dark:filter dark:invert"
@@ -465,7 +465,7 @@ export default function Home() {
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <Image
               alt="Real Enquiries"
-              src="/assets/brand/icon.svg"
+              src="assets/brand/icon.svg"
               width={48}
               height={48}
               className="h-9"
