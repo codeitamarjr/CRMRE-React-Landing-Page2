@@ -17,10 +17,6 @@ export const metadata: Metadata = {
   description: "Transform your operational workflow and elevate team collaboration across the board. Real Enquiries enables team members to manage all aspects of the real estate business — from lettings to accounting, sharing critical information effortlessly.",
 };
 
-export const favicon = (
-  <link id="favicon" rel="icon" type="image/x-icon" href="/assets/brand/icon.svg" />
-);
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {favicon}
+      <link id="favicon" rel="icon" type="image/x-icon" href="/assets/brand/icon.svg" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -12,6 +12,8 @@ import {
   ArrowsRightLeftIcon,
   DocumentCheckIcon,
 } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -102,14 +104,6 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((currentIndex) => (currentIndex + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
   const images = isDarkMode
     ? [
       "assets/screenshots/Real-Enquiries-Dashboard-Dark.png",
@@ -123,6 +117,14 @@ export default function Home() {
       "assets/screenshots/Real-Enquiries-Profile.png",
       "assets/screenshots/Real-Enquiries-Term.png",
     ];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((currentIndex) => (currentIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [images.length]);
 
   useEffect(() => {
     const notificationDismissed = localStorage.getItem('notificationDismissed');
@@ -142,14 +144,16 @@ export default function Home() {
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Real Enquiries</span>
-              <img
+              <Image
                 alt="Real Enquiries"
                 src="/assets/brand/icon.svg"
+                width={32}
+                height={32}
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -172,14 +176,16 @@ export default function Home() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="/" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Real Enquiries</span>
-                <img
+                <Image
                   alt="Real Enquiries"
                   src="/assets/brand/icon.svg"
+                  width={32}
+                  height={32}
                   className="h-8 w-auto"
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -243,7 +249,7 @@ export default function Home() {
               </div>
               <div className="mt-16 flow-root sm:mt-24">
                 <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                  <img
+                  <Image
                     alt="App screenshot"
                     src={images[currentImageIndex]}
                     width={2432}
@@ -272,35 +278,35 @@ export default function Home() {
         {/* Logo third parties */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-            <img
+            <Image
               alt="Xero Accounting"
               src="/assets/third/logos/xero.png"
               width={158}
               height={48}
               className="size-8 col-span-2 max-h-12 w-full object-contain lg:col-span-1 dark:filter dark:invert"
             />
-            <img
+            <Image
               alt="DocuSign"
               src="/assets/third/logos/docusign.webp"
               width={158}
               height={48}
               className="size-6 col-span-2 max-h-12 w-full object-contain lg:col-span-1 dark:filter dark:invert"
             />
-            <img
+            <Image
               alt="Yardi"
               src="/assets/third/logos/yardi.png"
               width={158}
               height={48}
               className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 dark:filter dark:invert"
             />
-            <img
+            <Image
               alt="RTB"
               src="/assets/third/logos/rtb.png"
               width={158}
               height={48}
               className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1 dark:filter dark:invert"
             />
-            <img
+            <Image
               alt="Court Ireland"
               src="/assets/third/logos/court-ireland.webp"
               width={158}
@@ -358,7 +364,7 @@ export default function Home() {
         {/* Testimonial section */}
         <div className="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden bg-gray-900 dark:bg-gray-800 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
-            <img
+            <Image
               alt="Itamar Junior"
               src="https://itjunior.dev/assets/images/me.webp"
               className="absolute inset-0 size-full object-cover brightness-150 saturate-0"
@@ -386,7 +392,7 @@ export default function Home() {
               />
             </div>
             <div className="relative mx-auto max-w-2xl lg:mx-0">
-              <img
+              <Image
                 alt="MD Property & Living"
                 src="https://images.squarespace-cdn.com/content/v1/5cf67b964faeb100010e6dab/d29c81eb-2e74-4b9c-8383-1f0b422e99a5/FullLogo_white.png?format=1500w"
                 className="h-12 w-auto"
@@ -394,7 +400,7 @@ export default function Home() {
               <figure>
                 <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl/8">
                   <p>
-                    “I created Real Enquiries to simplify real estate management. It's been a game changer for me and my team. We can onboard a new client with a few clicks and get the application process flowing effortlessly.”
+                    “I created Real Enquiries to simplify real estate management. It is been a game changer for me and my team. We can onboard a new client with a few clicks and get the application process flowing effortlessly.”
                   </p>
                 </blockquote>
                 <figcaption className="mt-6 text-base text-white">
@@ -453,7 +459,7 @@ export default function Home() {
       <footer className="relative mx-auto mt-32 max-w-7xl px-6 lg:px-8">
         <div className="border-t border-gray-900/10 dark:border-gray-200/10 py-16 sm:py-24 lg:py-32">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img
+            <Image
               alt="Real Enquiries"
               src="/assets/brand/icon.svg"
               className="h-9"
