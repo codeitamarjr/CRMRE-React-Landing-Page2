@@ -320,7 +320,7 @@ export default function Home() {
             />
           </div>
           <div className="hidden sm:mb-9 sm:flex sm:justify-center mt-16">
-            <div className="rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-gray-100 ring-1 ring-gray-900/10 hover:ring-gray-500/20 dark:ring-indigo-900 md:text-xl">
+            <div className="rounded-full px-3 pb-0.5 pt-0[calc(theme(spacing.0.2)-1px] text-sm leading-6 text-gray-600 dark:text-gray-100 ring-1 ring-gray-900/10 hover:ring-gray-500/20 dark:ring-indigo-900 md:text-xl">
               Your one stop solution to manage&nbsp;
               <span className="text-indigo-500 inline-flex flex-col h-[calc(theme(fontSize.xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.xl)*theme(lineHeight.tight))] overflow-hidden">
                 <ul className="block animate-text-slide-5 text-left leading-tight">
