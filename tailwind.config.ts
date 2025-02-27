@@ -8,14 +8,14 @@ export default {
   theme: {
     extend: {
       animation: {
-        'gradient': 'gradient 8s linear infinite',
-        'text-slide-2': 'text-slide-2 5s cubic-bezier(0.88, 0, 0.12, 1) infinite',
-        'text-slide-3': 'text-slide-3 7.5s cubic-bezier(0.88, 0, 0.12, 1) infinite',
-        'text-slide-4': 'text-slide-4 10s cubic-bezier(0.88, 0, 0.12, 1) infinite',
-        'text-slide-5': 'text-slide-5 12.5s cubic-bezier(0.88, 0, 0.12, 1) infinite',
-        'text-slide-6': 'text-slide-6 15s cubic-bezier(0.88, 0, 0.12, 1) infinite',
-        'text-slide-7': 'text-slide-7 17.5s cubic-bezier(0.88, 0, 0.12, 1) infinite',
-        'text-slide-8': 'text-slide-8 20s cubic-bezier(0.88, 0, 0.12, 1) infinite',
+        'gradient': 'gradient 9s linear infinite',
+        'text-slide-2': 'text-slide-2 5s cubic-bezier(0.88, 0.5, 0.12, 1.4) infinite',
+        'text-slide-3': 'text-slide-3 7.5s cubic-bezier(0.88, 0.5, 0.12, 1.4) infinite',
+        'text-slide-4': 'text-slide-4 10s cubic-bezier(0.88, 0.5, 0.12, 1.4) infinite',
+        'text-slide-5': 'text-slide-5 12.5s cubic-bezier(0.88, 0.5, 0.12, 1.4) infinite',
+        'text-slide-6': 'text-slide-6 15s cubic-bezier(0.88, 0.5, 0.12, 1.4) infinite',
+        'text-slide-7': 'text-slide-7 17.5s cubic-bezier(0.88, 0.5, 0.12, 1.4) infinite',
+        'text-slide-8': 'text-slide-8 20s cubic-bezier(0.88, 0.5, 0.12, 1.4) infinite',
       },
       keyframes: {
         'gradient': {
