@@ -2,6 +2,9 @@
 
 Welcome to the **Real Enquiries** landing page repository! This is a modern, responsive, and accessible landing page built with **Next.js, React, Tailwind CSS, and Headless UI**. It features an interactive UI, automatic image transitions, dark mode support, and a privacy policy notification.
 
+![Real Enquiries Landing Page Dark Mode 2.0](./public/assets/screenshots/Real-Enquiries-Landling-Dark.png#gh-dark-mode-only)
+![Real Enquiries Landing Page 2.0](./public/assets/screenshots/Real-Enquiries-Landling.png#gh-light-mode-only)
+
 ---
 
 ## 🚀 Features
