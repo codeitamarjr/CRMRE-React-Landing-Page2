@@ -248,15 +248,20 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-16 flow-root sm:mt-24">
-                <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                  <Image
-                    alt="App screenshot"
-                    src={images[currentImageIndex]}
-                    width={2432}
-                    height={1442}
-                    className="rounded-md shadow-2xl ring-1 ring-gray-900/10 transition-opacity duration-1000 opacity-100"
-                    key={currentImageIndex}
-                  />
+                <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative w-full mx-auto">
+                  <div className="relative w-full h-[600px] overflow-hidden rounded-md">
+                    {images.map((image, index) => (
+                      <Image
+                        key={index}
+                        alt="App screenshot"
+                        src={image}
+                        width={2432}
+                        height={600}
+                        className={`absolute w-full transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                          }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -314,7 +319,6 @@ export default function Home() {
               className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1 dark:filter dark:invert"
             />
           </div>
-
           <div className="hidden sm:mb-9 sm:flex sm:justify-center mt-16">
             <div className="rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-gray-100 ring-1 ring-gray-900/10 hover:ring-gray-500/20 dark:ring-indigo-900 md:text-xl">
               Your one stop solution to manage&nbsp;
@@ -330,7 +334,6 @@ export default function Home() {
               </span>
             </div>
           </div>
-
         </div>
 
         {/* Feature section */}

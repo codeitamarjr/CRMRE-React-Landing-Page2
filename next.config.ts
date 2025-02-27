@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? '/CRMRE-Landing-Page2/' : '',
-  basePath: isProd ? '/CRMRE-Landing-Page2' : '',
+  // assetPrefix: isProd ? '/CRMRE-Landing-Page2/' : '',
+  // basePath: isProd ? '/CRMRE-Landing-Page2' : '',
   output: 'export',
 };
 

@@ -1,7 +1,7 @@
 {
   "name": "crmre-landing-page2",
   "version": "0.1.0",
-  "homepage": "https://codeitamarjr.github.io/CRMRE-Landing-Page2",
+  "homepage": "./",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
