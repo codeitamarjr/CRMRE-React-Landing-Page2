@@ -15,7 +15,7 @@ const footerNavigation = {
         { name: "Guides", href: "#" },
     ],
     company: [
-        { name: "About", href: "#" },
+        { name: "About", href: "/about" },
         { name: "Blog", href: "/blog" },
     ],
     legal: [

@@ -95,7 +95,6 @@ export default function Home() {
 
   return (
     <Layout>
-
       <main className="isolate">
         {/* Hero section */}
         <div className="relative pt-14">
@@ -335,7 +334,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
     </Layout>
   );
 }
