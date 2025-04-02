@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === 'production';
+// const isProd = process.env.NODE_ENV === 'production';
 const nextConfig: NextConfig = {
+  transpilePackages: ['next-mdx-remote'],
   reactStrictMode: true,
   images: {
     unoptimized: true,

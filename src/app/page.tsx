@@ -1,10 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
 import {
-  Bars3Icon,
-  XMarkIcon,
   MagnifyingGlassIcon,
   ClipboardDocumentCheckIcon,
   DocumentDuplicateIcon,
@@ -13,14 +10,8 @@ import {
   DocumentCheckIcon,
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import Link from 'next/link'
+import Layout from "@/components/Layout";
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
 const features = [
   {
     name: 'Automated Tenant Screening',
@@ -59,34 +50,10 @@ const features = [
     icon: DocumentCheckIcon,
   },
 ]
-const footerNavigation = {
-  solutions: [
-    { name: 'Enquiries', href: '#' },
-    { name: 'Applications', href: '#' },
-    { name: 'On-boarding', href: '#' },
-    { name: 'Reports', href: '#' },
-    { name: 'Integrations', href: '#' },
-  ],
-  support: [
-    { name: 'Submit ticket', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-  ],
-  legal: [
-    { name: 'Terms of service', href: '#' },
-    { name: 'Privacy policy', href: '#' },
-    { name: 'License', href: '#' },
-  ],
-}
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [showNotification, setShowNotification] = useState(true);
 
   useEffect(() => {
     const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -126,102 +93,8 @@ export default function Home() {
     return () => clearInterval(intervalId);
   }, [images.length]);
 
-  useEffect(() => {
-    const notificationDismissed = localStorage.getItem('notificationDismissed');
-    if (notificationDismissed === 'true') {
-      setShowNotification(false);
-    }
-  }, []);
-
-  const handleDismissNotification = () => {
-    setShowNotification(false);
-    localStorage.setItem('notificationDismissed', 'true');
-  };
-
   return (
-    <div className="bg-white dark:bg-gray-900">
-      {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
-          <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Real Enquiries</span>
-              <Image
-                alt="Real Enquiries"
-                src="assets/brand/icon.svg"
-                width={32}
-                height={32}
-                className="h-8 w-auto"
-              />
-            </Link>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200"
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="size-6" />
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="mailto:contact@realenquiries.com?subject=CRMRE: Contact&body=Tell me more about Real Enquiries!"
-              className="text-sm/6 font-semibold text-gray-900 dark:text-gray-400">
-              Join our waiting list <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-        </nav>
-        <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-          <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">Real Enquiries</span>
-                <Image
-                  alt="Real Enquiries"
-                  src="assets/brand/icon.svg"
-                  width={32}
-                  height={32}
-                  className="h-8 w-auto"
-                />
-              </Link>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon aria-hidden="true" className="size-6" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-                <div className="py-6">
-                  <a
-                    href="mailto:contact@realenquiries.com?subject=CRMRE: Contact&body=Tell me more about Real Enquiries!"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >
-                    Join our waiting list <span aria-hidden="true">&rarr;</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </DialogPanel>
-        </Dialog>
-      </header>
-
+    <Layout>
       <main className="isolate">
         {/* Hero section */}
         <div className="relative pt-14">
@@ -397,13 +270,6 @@ export default function Home() {
               />
             </div>
             <div className="relative mx-auto max-w-2xl lg:mx-0">
-              <Image
-                alt="MD Property & Living"
-                src="https://images.squarespace-cdn.com/content/v1/5cf67b964faeb100010e6dab/d29c81eb-2e74-4b9c-8383-1f0b422e99a5/FullLogo_white.png?format=1500w"
-                width={500}
-                height={500}
-                className="h-12 w-auto"
-              />
               <figure>
                 <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl/8">
                   <p>
@@ -461,111 +327,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="relative mx-auto mt-32 max-w-7xl px-6 lg:px-8">
-        <div className="border-t border-gray-900/10 dark:border-gray-200/10 py-16 sm:py-24 lg:py-32">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <Image
-              alt="Real Enquiries"
-              src="assets/brand/icon.svg"
-              width={48}
-              height={48}
-              className="h-9"
-            />
-            <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300">Solutions</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.solutions.map((item) => (
-                      <li key={item.name}>
-                        <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300">Support</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.support.map((item) => (
-                      <li key={item.name}>
-                        <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300">Company</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.company.map((item) => (
-                      <li key={item.name}>
-                        <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-gray-300">Legal</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.legal.map((item) => (
-                      <li key={item.name}>
-                        <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Global notification live region, render this permanently at the end of the document */}
-      <div aria-live="assertive" className="pointer-events-none fixed inset-0 flex items-end justify-end px-4 py-6 sm:items-end sm:justify-end sm:p-6">
-
-        {showNotification && (
-          <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
-            {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
-            <div className="pointer-events-auto w-full overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-              <div className="p-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                  </div>
-                  <div className="ml-3 w-0 flex-1 pt-0.5">
-                    <p className="text-sm font-medium text-gray-900">Privacy Policy Disclosures</p>
-                    <p className="mt-1 text-xs text-gray-500">
-                      We partner with <a href="https://clarity.microsoft.com" target='_blank' rel='noreferrer' className="hover:underline text-indigo-600">Microsoft Clarity</a> and <a href="https://www.facebook.com/business/tools/meta-pixel" target='_blank' rel='noreferrer' className="hover:underline text-indigo-600">Meta Pixel</a> to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay to improve and market our products/services. Website usage data is captured using first and third-party cookies and other tracking technologies to determine the popularity of products/services and online activity. Additionally, we use this information for site optimization, fraud/security purposes, and advertising. For more information about how Microsoft and Meta Pixel collect and use your data, visit the <a href='https://privacy.microsoft.com/en-us/privacystatement' target='_blank' rel='noreferrer' className="hover:underline text-indigo-600">Microsoft Privacy Statement</a> and the <a href='https://www.facebook.com/about/privacy/' target='_blank' rel='noreferrer' className="hover:underline text-indigo-600">Meta Privacy Policy</a>.
-                    </p>
-                  </div>
-                  <div className="ml-4 flex flex-shrink-0">
-                    <button
-                      type="button"
-                      className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                      onClick={handleDismissNotification}
-                    >
-                      <span className="sr-only">Close</span>
-                      <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
+    </Layout>
   );
 }
