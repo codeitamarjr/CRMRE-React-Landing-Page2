@@ -270,13 +270,6 @@ export default function Home() {
               />
             </div>
             <div className="relative mx-auto max-w-2xl lg:mx-0">
-              <Image
-                alt="MD Property & Living"
-                src="https://images.squarespace-cdn.com/content/v1/5cf67b964faeb100010e6dab/d29c81eb-2e74-4b9c-8383-1f0b422e99a5/FullLogo_white.png?format=1500w"
-                width={500}
-                height={500}
-                className="h-12 w-auto"
-              />
               <figure>
                 <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl/8">
                   <p>
